@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F9A45F4-6B85-4C23-A805-A54A7CAE7B52}</ProjectGuid>
+    <Description>A Xamarin.Forms implementation of the Material Design Floating Action Button on iOS and Android.</Description>
+    <PackageId>SuaveControls.FloatingActionButton</PackageId>
+    <PackageVersion>2017.10.16</PackageVersion>
+    <Authors>SuavePirate</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SuaveControls.FloatingActionButton</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>SuaveControls.FloatingActionButton.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Owners>SuavePirate</Owners>
+    <PackageTags>Xamarin Xamarin.Forms Material Design FAB</PackageTags>
+    <Title>Xamarin.Forms SuaveControls.FloatingActionButton</Title>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <Summary>A Xamarin.Forms implementation of the Material Design Floating Action Button on iOS and Android.</Summary>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuaveControls.FloatingActionButton.Android\SuaveControls.FloatingActionButton.Android.csproj">
+      <Project>{16EFA643-AC49-43B5-9911-2AB544273E0F}</Project>
+      <Name>SuaveControls.FloatingActionButton.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuaveControls.FloatingActionButton.iOS\SuaveControls.FloatingActionButton.iOS.csproj">
+      <Project>{E3551090-7DBF-450E-BC38-288279277760}</Project>
+      <Name>SuaveControls.FloatingActionButton.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.0</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>
